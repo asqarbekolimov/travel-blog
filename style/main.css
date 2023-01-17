@@ -114,7 +114,6 @@ form .btn,
   box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08),
     0px 2px 3px rgba(13, 96, 111, 0.16);
   border-radius: 10px;
-  z-index: 999;
 }
 .perfect .title,
 .destinations .title,
@@ -216,10 +215,24 @@ footer {
     background: none;
   }
   nav .navbar {
-    display: none;
+    display: none !important;
+  }
+  nav .navbar.active {
+    display: block !important;
+
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #f2775c;
+    width: 250px;
   }
   .burger {
     display: block;
+    cursor: pointer;
   }
   section {
     padding: 50px;
@@ -240,8 +253,23 @@ footer {
   }
 }
 @media (max-width: 950px) {
+  nav {
+    padding: 20px 40px;
+  }
   section {
     padding: 20px;
+  }
+  nav a img {
+    display: none;
+  }
+  .hero .title {
+    font-size: 50px;
+  }
+  form .btn {
+    padding: 15px 20px;
+  }
+  .hero form input {
+    font-size: 20px;
   }
   .perfect .row {
     flex-direction: column;
